@@ -1,11 +1,6 @@
-# 使用时先用require引进
-# visualMusic = require 'visual-music'
-# 再将其实例化
-# vm = new visualMusic
-# 	src:'audio.mp3'
-
 class lottieLayer extends Layer
 	animationObj = null
+	timer = null
 	# 构造器
 	constructor: (@options={}) ->
 		# 基本配置项
@@ -37,10 +32,10 @@ class lottieLayer extends Layer
 		elId = "lottie-animation-"+anmiLayer.id
 
 		if(document.bodymovinScript)
-			timer = Utils.interval 0.1,->
+			bodymovinTimer = Utils.interval 0.1,->
 				if(bodymovin)
 					_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin)
-					window.clearInterval(timer)
+					window.clearInterval(bodymovinTimer)
 		else
 			document.bodymovinScript = Utils.domLoadScript 'bodymovin.min.js', ->
 				_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin)
@@ -55,50 +50,37 @@ class lottieLayer extends Layer
 					animationData: data
 				animationObj = bodymovin.loadAnimation(aniObj)
 
+	_loop = (callback)->
+		timer = Utils.interval 0.1,->
+			if(animationObj)
+				window.clearInterval(timer)
+				callback()
 	play:()->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.play()
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.play()
 	stop:()->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.stop()
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.stop()
 	pause:()->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.pause()
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.pause()
 	setSpeed:(speed)->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.setSpeed(speed)
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.setSpeed(speed)
 	goToAndStop:(value, isFrame)->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.goToAndStop(value, isFrame)
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.goToAndStop(value, isFrame)
 	goToAndPlay:(value, isFrame)->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.goToAndPlay(value, isFrame)
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.goToAndPlay(value, isFrame)
 	setDirection:(direction)->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.setDirection(direction)
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.setDirection(direction)
 	playSegments:(segments, forceFlag)->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.playSegments(segments, forceFlag)
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.playSegments(segments, forceFlag)
 	destroy:()->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				animationObj.destroy()
-				window.clearInterval(timer)
+		_loop ()->
+			animationObj.destroy()
 
 module.exports = lottieLayer

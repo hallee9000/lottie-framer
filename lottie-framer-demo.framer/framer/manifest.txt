@@ -1,0 +1,48 @@
+app.coffee
+bodymovin.min.js
+data-2.json
+data.json
+framer/backups/backup-2017-03-16 22.00.55.coffee
+framer/backups/backup-2017-03-16 22.08.55.coffee
+framer/backups/backup-2017-03-16 22.09.55.coffee
+framer/backups/backup-2017-03-16 22.10.55.coffee
+framer/backups/backup-2017-03-16 22.11.56.coffee
+framer/backups/backup-2017-03-16 22.13.55.coffee
+framer/backups/backup-2017-03-16 22.14.55.coffee
+framer/backups/backup-2017-03-16 22.15.55.coffee
+framer/backups/backup-2017-03-16 22.28.55.coffee
+framer/backups/backup-2017-03-16 22.29.55.coffee
+framer/backups/backup-2017-03-16 22.38.39.coffee
+framer/backups/backup-2017-03-19 17.21.54.coffee
+framer/backups/backup-2017-03-19 22.44.00.coffee
+framer/backups/backup-2017-03-19 22.49.00.coffee
+framer/backups/backup-2017-03-19 22.52.00.coffee
+framer/backups/backup-2017-03-19 22.53.00.coffee
+framer/backups/backup-2017-03-19 23.19.00.coffee
+framer/backups/backup-2017-03-19 23.20.00.coffee
+framer/backups/backup-2017-03-19 23.21.00.coffee
+framer/backups/backup-2017-03-19 23.24.00.coffee
+framer/backups/backup-2017-03-19 23.30.06.coffee
+framer/coffee-script.js
+framer/config.json
+framer/framer.generated.js
+framer/framer.init.js
+framer/framer.js
+framer/framer.js.map
+framer/framer.modules.js
+framer/images/cursor-active.png
+framer/images/cursor-active@2x.png
+framer/images/cursor.png
+framer/images/cursor@2x.png
+framer/images/icon-120.png
+framer/images/icon-152.png
+framer/images/icon-180.png
+framer/images/icon-192.png
+framer/images/icon-76.png
+framer/manifest.txt
+framer/preview.png
+framer/style.css
+framer/version
+images/framer-icon.png
+index.html
+modules/lottieLayer.coffee
