@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<script type="text/javascript">
+		// This automatically sets the right viewport scale on mobile devices
+		(function() {
+ 		var scale = 1 / window.devicePixelRatio
+ 		var viewport = "width=device-width, height=device-height, initial-scale=" + scale + ", maximum-scale=" + scale + ", user-scalable=no"
+ 		var iOS = /iPad|iPhone|iPod/.test(navigator.platform)
+ 		if (iOS) { viewport += ", shrink-to-fit=no" }
+ 		document.write("<meta name=\"viewport\" content=\"" + viewport + "\">")
+		})()
+		</script>
+
+		<link rel="apple-touch-icon" href="framer/images/icon-120.png">
+		<link rel="apple-touch-icon" href="framer/images/icon-76.png" sizes="76x76">
+		<link rel="apple-touch-icon" href="framer/images/icon-120.png" sizes="120x120">
+		<link rel="apple-touch-icon" href="framer/images/icon-152.png" sizes="152x152">
+		<link rel="apple-touch-icon" href="framer/images/icon-180.png" sizes="180x180">
+		<link rel="apple-touch-icon" href="framer/images/icon-192.png" sizes="192x192">
+
+		<link rel="stylesheet" type="text/css" href="framer/style.css?nocache=6d40bc53861208d298f85019e08849ff">
+
+		<script src="framer/coffee-script.js"></script>
+		<script src="framer/framer.js?nocache=de1b3b046cd7a44d11f275a7634f9e0b"></script>
+		<script src="framer/framer.generated.js?nocache=27d512ed46dba8aab8cfcccbfd23d274"></script>
+		<script src="framer/framer.modules.js?nocache=a48a3f6cb3e45983bd94201f7185633e"></script>
+		<script>document.addEventListener("DOMContentLoaded", function() {window.__framerClientCodeId = 896;window.__framerNew = function (n,loc,th,i){if (i == null) { return i };i.__framerInstanceInfo = _.defaults({name:n,location:loc,hash:th},i.__framerInstanceInfo);_.defaults(i.__framerInstanceInfo,{name:"Untitled"});return i;};window.__framerAnimation = function (th,a){if (a.isNoop === true) {return a;};var l = a.layer;if (l == null) { return a; };if (l.__framerAnimationInfo == null) {l.__framerAnimationInfo = {};};l.__framerAnimationInfo[th] = {originalState:a._originalState, destinationProperties: a.properties, destinationOptions: a.options};return a;};(function() {
+  var buttonPause, buttonPlay, lf, lottieLogoAnimation, styles;
+
+  Screen.backgroundColor = "#FFF";
+
+  lf = require('lottieLayer');
+
+  lottieLogoAnimation = window.__framerNew("lottieLogoAnimation", "5:26-12:0", "?",new lf({
+    jsonPath: 'data.json',
+    autoplay: false,
+    looping: true,
+    width: Screen.width,
+    height: Screen.height
+  }));
+
+  styles = {
+    "color": "#00D1C1",
+    "text-align": "center",
+    "font-size": "35px",
+    "line-height": "93px"
+  };
+
+  buttonPlay = window.__framerNew("buttonPlay", "19:17-30:0", "#120a43c3c",new Layer({
+    y: 981,
+    x: 30,
+    height: 93,
+    width: 270,
+    borderRadius: 6,
+    backgroundColor: "#00D1C1",
+    html: "PLAY",
+    shadowSpread: 15,
+    shadowBlur: 50,
+    shadowColor: "rgba(0,0,0,0.1)"
+  }));
+
+  buttonPause = window.__framerNew("buttonPause", "31:18-44:0", "#10a31cac7",new Layer({
+    y: 981,
+    x: 340,
+    height: 93,
+    width: 270,
+    borderRadius: 6,
+    backgroundColor: "#FFF",
+    borderWidth: 2,
+    borderColor: "#00D1C1",
+    html: "PAUSE",
+    shadowSpread: 10,
+    shadowBlur: 40,
+    shadowColor: "rgba(0,0,0,0.1)"
+  }));
+
+  buttonPlay.style = styles;
+
+  buttonPause.style = styles;
+
+  buttonPlay.style["color"] = "#FFF";
+
+  buttonPlay.onClick(function() {
+    lottieLogoAnimation.play();
+    window.__framerAnimation("#14665ced8",buttonPlay.animate({
+      opacity: 0.6
+    }));
+    return window.__framerAnimation("#b032455a",buttonPause.animate({
+      opacity: 1
+    }));
+  });
+
+  buttonPause.onClick(function() {
+    lottieLogoAnimation.pause();
+    window.__framerAnimation("#b8b16d9f",buttonPause.animate({
+      opacity: 0.6
+    }));
+    return window.__framerAnimation("#17960c076",buttonPlay.animate({
+      opacity: 1
+    }));
+  });
+
+}).call(this);
+})</script>
+
+	</head>
+	<body>
+	</body>
+</html>

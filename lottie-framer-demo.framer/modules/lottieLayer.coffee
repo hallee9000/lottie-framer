@@ -9,7 +9,7 @@ class lottieLayer extends Layer
 		@options.height ?= 200
 		@options.backgroundColor ?= 'transparent'
 		@options.renderer ?= 'svg'
-		@options.loop ?= true
+		@options.looping ?= true
 		@options.autoplay ?= true
 
 		super @options
@@ -26,7 +26,7 @@ class lottieLayer extends Layer
 
 		jsonPath = @options.jsonPath
 		renderer = @options.renderer
-		isLoop = @options.loop
+		isLoop = @options.looping
 		isAutoplay = @options.autoplay
 
 		elId = "lottie-animation-"+anmiLayer.id

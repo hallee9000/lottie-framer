@@ -2,27 +2,27 @@ app.coffee
 bodymovin.min.js
 data-2.json
 data.json
-framer/backups/backup-2017-03-16 22.00.55.coffee
-framer/backups/backup-2017-03-16 22.08.55.coffee
-framer/backups/backup-2017-03-16 22.09.55.coffee
-framer/backups/backup-2017-03-16 22.10.55.coffee
-framer/backups/backup-2017-03-16 22.11.56.coffee
-framer/backups/backup-2017-03-16 22.13.55.coffee
-framer/backups/backup-2017-03-16 22.14.55.coffee
-framer/backups/backup-2017-03-16 22.15.55.coffee
-framer/backups/backup-2017-03-16 22.28.55.coffee
-framer/backups/backup-2017-03-16 22.29.55.coffee
-framer/backups/backup-2017-03-16 22.38.39.coffee
-framer/backups/backup-2017-03-19 17.21.54.coffee
-framer/backups/backup-2017-03-19 22.44.00.coffee
-framer/backups/backup-2017-03-19 22.49.00.coffee
-framer/backups/backup-2017-03-19 22.52.00.coffee
-framer/backups/backup-2017-03-19 22.53.00.coffee
-framer/backups/backup-2017-03-19 23.19.00.coffee
-framer/backups/backup-2017-03-19 23.20.00.coffee
-framer/backups/backup-2017-03-19 23.21.00.coffee
-framer/backups/backup-2017-03-19 23.24.00.coffee
-framer/backups/backup-2017-03-19 23.30.06.coffee
+framer/backups/backup-2017-03-20 22.01.55.coffee
+framer/backups/backup-2017-03-20 22.02.55.coffee
+framer/backups/backup-2017-03-20 22.04.55.coffee
+framer/backups/backup-2017-03-20 22.05.55.coffee
+framer/backups/backup-2017-03-20 22.06.55.coffee
+framer/backups/backup-2017-03-20 22.07.55.coffee
+framer/backups/backup-2017-03-20 22.08.55.coffee
+framer/backups/backup-2017-03-20 22.09.55.coffee
+framer/backups/backup-2017-03-20 22.10.55.coffee
+framer/backups/backup-2017-03-20 22.11.55.coffee
+framer/backups/backup-2017-03-20 22.12.55.coffee
+framer/backups/backup-2017-03-20 22.13.55.coffee
+framer/backups/backup-2017-03-20 22.14.55.coffee
+framer/backups/backup-2017-03-20 22.15.55.coffee
+framer/backups/backup-2017-03-20 22.16.55.coffee
+framer/backups/backup-2017-03-20 22.17.55.coffee
+framer/backups/backup-2017-03-20 22.18.55.coffee
+framer/backups/backup-2017-03-20 22.19.55.coffee
+framer/backups/backup-2017-03-20 22.20.55.coffee
+framer/backups/backup-2017-03-20 22.21.55.coffee
+framer/backups/backup-2017-03-20 22.23.55.coffee
 framer/coffee-script.js
 framer/config.json
 framer/framer.generated.js
@@ -41,6 +41,10 @@ framer/images/icon-192.png
 framer/images/icon-76.png
 framer/manifest.txt
 framer/preview.png
+framer/social-1200x630.png
+framer/social-800x600.png
+framer/social-80x80.png
+framer/social-880x460.png
 framer/style.css
 framer/version
 images/framer-icon.png

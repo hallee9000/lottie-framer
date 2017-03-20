@@ -30,10 +30,10 @@ animA = new lottieLayer
 * **stop()** 停止播放动画。
 * **pause()** 暂停动画。
 * **setSpeed(speed)** 设定速度，1为正常速度，小于1表示慢速，大于1表示快速。
-* **goToAndStop(value, isFrame)** 跳转到某一毫秒或某一帧停止。第一个参数是一个数字，第二个参数用来决定第一个参数的数字代表时间还是帧数，默认为时间。
-* **goToAndPlay(value, isFrame)** 跳转到某一毫秒或某一帧播放。第一个参数是一个数字，第二个参数用来决定第一个参数的数字代表时间还是帧数，默认为时间。
+* **goToAndStop(value, isFrame)** 跳转到某一毫秒或某一帧停止。第一个参数是一个数字，第二个参数是个布尔值，用来决定第一个参数的数字代表时间还是帧数，默认为时间。
+* **goToAndPlay(value, isFrame)** 跳转到某一毫秒或某一帧播放。第一个参数是一个数字，第二个参数是个布尔值，用来决定第一个参数的数字代表时间还是帧数，默认为时间。
 * **setDirection(direction)** 设定方向，1表示正向动画。
-* **playSegments(segments, forceFlag)** first param is a single array or multiple arrays of two values each(fromFrame,toFrame), second param is a boolean for forcing the new segment right away。
+* **playSegments(segments, forceFlag)** 播放片段。第一个参数是一个或多个数组组成的片段或片段集合，每个数组都有两个值（开始帧，结束帧）。第二个参数是一个布尔值，表示下一个片段是否立即播放。第一个参数的值可以这样写：`[0,20]`或者`[[0,20],[30,40]]`。
 * **destroy()** 销毁这个动画。
 
 <!-- ### 效果演示 -->

@@ -1,17 +1,18 @@
 {
-  "propertyPanelToggleStates" : {
-
-  },
-  "deviceOrientation" : 0,
-  "sharedPrototype" : 0,
-  "contentScale" : 1,
-  "deviceType" : "fullscreen",
-  "selectedHand" : "",
+  "orientation" : 0,
   "updateDelay" : 0.3,
-  "deviceScale" : 1,
+  "contentScale" : 1,
+  "fullScreen" : false,
+  "sharedPrototype" : 0,
+  "propertyPanelToggleStates" : {
+    "Filters" : false
+  },
+  "deviceType" : "apple-iphone-5s-silver",
+  "projectId" : "E28DA7C3-33C0-4F41-A162-E41283508CC0",
+  "deviceOrientation" : 0,
+  "selectedHand" : "",
   "foldedCodeRanges" : [
 
   ],
-  "orientation" : 0,
-  "projectId" : "E28DA7C3-33C0-4F41-A162-E41283508CC0"
+  "deviceScale" : "fit"
 }
