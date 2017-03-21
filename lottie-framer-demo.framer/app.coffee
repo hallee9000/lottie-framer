@@ -10,53 +10,52 @@ lottieLogoAnimation = new lf
 	width: Screen.width
 	height: Screen.height
 
+welcomeText = new Layer
+	y: 350
+	width: Screen.width
+	backgroundColor: 'transparent'
+	html: "<p>WELCOME</p><p>TO</p><p>LOTTIE</p>"
 
-styles =
+welcomeText.style =
 	"color": "#00D1C1"
 	"text-align": "center"
-	"font-size": "35px"
-	"line-height": "93px"
+	"font-size": "66px"
+	"line-height": "80px"
+	"font-family": "Avenir Light,Georgia,serif"
+	"font-style": "italic"
+	"letter-spacing": "5px"
 
 buttonPlay = new Layer
 	y: 981
-	x: 30
+	x: 150
 	height: 93
-	width: 270
+	width: 340
 	borderRadius: 6
 	backgroundColor: "#00D1C1"
 	html: "PLAY"
 	shadowSpread: 15
 	shadowBlur: 50
-	shadowColor: "rgba(0,0,0,0.1)"
+	shadowColor: "rgba(0,0,0,0.05)"
 
-buttonPause = new Layer
-	y: 981
-	x: 340
-	height: 93
-	width: 270
-	borderRadius: 6
-	backgroundColor: "#FFF"
-	borderWidth: 2
-	borderColor: "#00D1C1"
-	html: "PAUSE"
-	shadowSpread: 10
-	shadowBlur: 40
-	shadowColor: "rgba(0,0,0,0.1)"
+buttonPlay.style =
+	"color": "#FFF"
+	"text-align": "center"
+	"font-size": "35px"
+	"line-height": "93px"
 
-buttonPlay.style = styles
-buttonPause.style = styles
-buttonPlay.style["color"] = "#FFF"
-
+isPlaying = false
 buttonPlay.onClick ->
-	lottieLogoAnimation.play()
-	buttonPlay.animate
-		opacity: 0.6
-	buttonPause.animate
-		opacity: 1
-
-buttonPause.onClick ->
-	lottieLogoAnimation.pause()
-	buttonPause.animate
-		opacity: 0.6
-	buttonPlay.animate
-		opacity: 1
+	if isPlaying
+		lottieLogoAnimation.pause()
+		isPlaying = false
+		buttonPlay.html = "PLAY"
+		buttonPlay.animate
+			opacity: 1
+	else
+		lottieLogoAnimation.play()
+		isPlaying = true
+		buttonPlay.html = "PAUSE"
+		buttonPlay.animate
+			opacity: 0.5
+		welcomeText.animate
+			opacity: 0
