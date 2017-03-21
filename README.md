@@ -12,9 +12,9 @@
 lottieLayer = require 'lottieLayer'
 # 新建一个 lottieLayer 图层
 lottieLogo = new lottieLayer
-    jsonPath:'data.json' #动画数据的json路径
-    autoplay: false #是否自动播放
-    looping: true #是否循环播放
+	jsonPath:'data.json' #动画数据的json路径
+	autoplay: false #是否自动播放
+	looping: true #是否循环播放
 	width: 100
 	height:100
 	backgroundColor: '#09C'
@@ -48,6 +48,7 @@ lottieLogo.play()
 * **destroy()**  销毁这个动画。
 
 ### 效果演示
+[DEMO链接](https://framer.cloud/ytocz/)
 ![](demo.gif)
 
 ____
@@ -65,9 +66,9 @@ Copy the module file `lottieLayer.coffee` to your `projectName/modules` folder, 
 lottieLayer = require 'lottieLayer'
 # Create a lottieLayer
 lottieLogo = new lottieLayer
-    jsonPath:'data.json' #animation data
-    autoplay: false #if autoplay
-    looping: true #if looping
+	jsonPath:'data.json' #animation data
+	autoplay: false #if autoplay
+	looping: true #if looping
 	width: 100
 	height:100
 	backgroundColor: '#09C'
@@ -98,5 +99,9 @@ Play the animation manually like this:
 ```CoffeeScript
 	lottieLogo.play()
 ```
+
+### DEMO TIME
+[DEMO link](https://framer.cloud/ytocz/)
+![](demo.gif)
 
 Enjoy it.

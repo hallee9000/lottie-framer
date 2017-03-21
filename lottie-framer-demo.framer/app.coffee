@@ -1,3 +1,13 @@
+# Project Info
+# This info is presented in a widget when you share.
+# http://framerjs.com/docs/#info.info
+
+Framer.Info =
+	title: ""
+	author: "leadream4"
+	twitter: "https://twitter.com/leadream4"
+	description: ""
+
 # Set background color
 Screen.backgroundColor = "#FFF"
 

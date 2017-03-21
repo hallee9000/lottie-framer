@@ -31,14 +31,21 @@
 		<script src="framer/framer.js?nocache=de1b3b046cd7a44d11f275a7634f9e0b"></script>
 		<script src="framer/framer.generated.js?nocache=27d512ed46dba8aab8cfcccbfd23d274"></script>
 		<script src="framer/framer.modules.js?nocache=a48a3f6cb3e45983bd94201f7185633e"></script>
-		<script>document.addEventListener("DOMContentLoaded", function() {window.__framerClientCodeId = 430;window.__framerNew = function (n,loc,th,i){if (i == null) { return i };i.__framerInstanceInfo = _.defaults({name:n,location:loc,hash:th},i.__framerInstanceInfo);_.defaults(i.__framerInstanceInfo,{name:"Untitled"});return i;};window.__framerAnimation = function (th,a){if (a.isNoop === true) {return a;};var l = a.layer;if (l == null) { return a; };if (l.__framerAnimationInfo == null) {l.__framerAnimationInfo = {};};l.__framerAnimationInfo[th] = {originalState:a._originalState, destinationProperties: a.properties, destinationOptions: a.options};return a;};(function() {
+		<script>document.addEventListener("DOMContentLoaded", function() {window.__framerClientCodeId = 14;window.__framerNew = function (n,loc,th,i){if (i == null) { return i };i.__framerInstanceInfo = _.defaults({name:n,location:loc,hash:th},i.__framerInstanceInfo);_.defaults(i.__framerInstanceInfo,{name:"Untitled"});return i;};window.__framerAnimation = function (th,a){if (a.isNoop === true) {return a;};var l = a.layer;if (l == null) { return a; };if (l.__framerAnimationInfo == null) {l.__framerAnimationInfo = {};};l.__framerAnimationInfo[th] = {originalState:a._originalState, destinationProperties: a.properties, destinationOptions: a.options};return a;};(function() {
   var buttonPlay, isPlaying, lf, lottieLogoAnimation, welcomeText;
+
+  Framer.Info = {
+    title: "",
+    author: "leadream4",
+    twitter: "https://twitter.com/leadream4",
+    description: ""
+  };
 
   Screen.backgroundColor = "#FFF";
 
   lf = require('lottieLayer');
 
-  lottieLogoAnimation = window.__framerNew("lottieLogoAnimation", "5:26-11:0", "?",new lf({
+  lottieLogoAnimation = window.__framerNew("lottieLogoAnimation", "15:26-21:0", "?",new lf({
     jsonPath: 'data.json',
     autoplay: false,
     looping: true,
@@ -46,7 +53,7 @@
     height: Screen.height
   }));
 
-  welcomeText = window.__framerNew("welcomeText", "12:18-17:0", "#1498a19a4",new Layer({
+  welcomeText = window.__framerNew("welcomeText", "22:18-27:0", "#ddce88a5",new Layer({
     y: 350,
     width: Screen.width,
     backgroundColor: 'transparent',
@@ -63,7 +70,7 @@
     "letter-spacing": "5px"
   };
 
-  buttonPlay = window.__framerNew("buttonPlay", "27:17-38:0", "#e526517f",new Layer({
+  buttonPlay = window.__framerNew("buttonPlay", "37:17-48:0", "#1796ac080",new Layer({
     y: 981,
     x: 150,
     height: 93,
@@ -90,17 +97,17 @@
       lottieLogoAnimation.pause();
       isPlaying = false;
       buttonPlay.html = "PLAY";
-      return window.__framerAnimation("#14673e659",buttonPlay.animate({
+      return window.__framerAnimation("#ae551338",buttonPlay.animate({
         opacity: 1
       }));
     } else {
       lottieLogoAnimation.play();
       isPlaying = true;
       buttonPlay.html = "PAUSE";
-      window.__framerAnimation("#83d949df",buttonPlay.animate({
+      window.__framerAnimation("#ebba76be",buttonPlay.animate({
         opacity: 0.5
       }));
-      return window.__framerAnimation("#eda5c061",welcomeText.animate({
+      return window.__framerAnimation("#15586ed40",welcomeText.animate({
         opacity: 0
       }));
     }

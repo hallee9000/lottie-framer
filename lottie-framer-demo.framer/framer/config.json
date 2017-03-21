@@ -3,7 +3,7 @@
   "updateDelay" : 0.3,
   "contentScale" : 1,
   "fullScreen" : false,
-  "sharedPrototype" : 0,
+  "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
     "Filters" : false
   },
@@ -12,7 +12,7 @@
   "deviceOrientation" : 0,
   "selectedHand" : "",
   "foldedCodeRanges" : [
-
+    "{0, 212}"
   ],
   "deviceScale" : "fit"
 }
