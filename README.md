@@ -49,6 +49,7 @@ lottieLogo.play()
 
 ### 效果演示
 [DEMO链接](https://framer.cloud/ytocz/)
+
 ![](demo.gif)
 
 ____
@@ -102,6 +103,7 @@ Play the animation manually like this:
 
 ### DEMO TIME
 [DEMO link](https://framer.cloud/ytocz/)
+
 ![](demo.gif)
 
 Enjoy it.
