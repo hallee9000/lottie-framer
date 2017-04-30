@@ -1,6 +1,5 @@
+bm = null
 class lottieLayer extends Layer
-	animationObj = null
-	timer = null
 	# 构造器
 	constructor: (@options={}) ->
 		# 基本配置项
@@ -13,6 +12,8 @@ class lottieLayer extends Layer
 		@options.autoplay ?= true
 
 		super @options
+
+		@anim = null
 
 		anmiLayer = new Layer
 			parent: @
@@ -31,14 +32,17 @@ class lottieLayer extends Layer
 
 		elId = "lottie-animation-"+anmiLayer.id
 
+		_this = @
+
 		if(document.bodymovinScript)
 			bodymovinTimer = Utils.interval 0.1,->
-				if(bodymovin)
-					_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin)
+				if(bm)
+					_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bm)
 					window.clearInterval(bodymovinTimer)
 		else
 			document.bodymovinScript = Utils.domLoadScript 'bodymovin.min.js', ->
-				_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin)
+				bm = bodymovin
+				_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bm)
 
 		_loadJSON = (jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin) ->
 			Utils.domLoadJSON jsonPath, (err, data)->
@@ -48,39 +52,6 @@ class lottieLayer extends Layer
 					loop: isLoop
 					autoplay:isAutoplay
 					animationData: data
-				animationObj = bodymovin.loadAnimation(aniObj)
-
-	_loop = (callback)->
-		timer = Utils.interval 0.1,->
-			if(animationObj)
-				window.clearInterval(timer)
-				callback()
-	play:()->
-		_loop ()->
-			animationObj.play()
-	stop:()->
-		_loop ()->
-			animationObj.stop()
-	pause:()->
-		_loop ()->
-			animationObj.pause()
-	setSpeed:(speed)->
-		_loop ()->
-			animationObj.setSpeed(speed)
-	goToAndStop:(value, isFrame)->
-		_loop ()->
-			animationObj.goToAndStop(value, isFrame)
-	goToAndPlay:(value, isFrame)->
-		_loop ()->
-			animationObj.goToAndPlay(value, isFrame)
-	setDirection:(direction)->
-		_loop ()->
-			animationObj.setDirection(direction)
-	playSegments:(segments, forceFlag)->
-		_loop ()->
-			animationObj.playSegments(segments, forceFlag)
-	destroy:()->
-		_loop ()->
-			animationObj.destroy()
+				_this.anim = bodymovin.loadAnimation(aniObj)
 
 module.exports = lottieLayer

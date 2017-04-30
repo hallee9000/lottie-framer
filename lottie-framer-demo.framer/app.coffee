@@ -9,63 +9,105 @@ Framer.Info =
 	description: ""
 
 # Set background color
+# 设置背景色
 Screen.backgroundColor = "#FFF"
 
+# import the module
+# 引入模块
 lf = require 'lottieLayer'
+
+# new a instance of it
 # 再将其实例化
-lottieLogoAnimation = new lf
+lottieLogoTop = new lf
 	jsonPath:'data.json'
 	autoplay: false
 	looping: true
 	width: Screen.width
-	height: Screen.height
+	height: Screen.height/2
+	borderColor: '#EEE'
+	borderWidth: 1
 
-welcomeText = new Layer
-	y: 350
-	width: Screen.width
-	backgroundColor: 'transparent'
-	html: "<p>WELCOME</p><p>TO</p><p>LOTTIE</p>"
-
-welcomeText.style =
-	"color": "#00D1C1"
-	"text-align": "center"
-	"font-size": "66px"
-	"line-height": "80px"
-	"font-family": "Avenir Light,Georgia,serif"
-	"font-style": "italic"
-	"letter-spacing": "5px"
-
-buttonPlay = new Layer
-	y: 981
-	x: 150
-	height: 93
-	width: 340
-	borderRadius: 6
+buttonTop = new Layer
+	y: 447
+	height: 100
+	width: 100
+	borderRadius: 50
 	backgroundColor: "#00D1C1"
 	html: "PLAY"
 	shadowSpread: 15
 	shadowBlur: 50
 	shadowColor: "rgba(0,0,0,0.05)"
+	x: 14
 
-buttonPlay.style =
+buttonTop.style =
 	"color": "#FFF"
 	"text-align": "center"
-	"font-size": "35px"
-	"line-height": "93px"
+	"font-size": "22px"
+	"line-height": "100px"
 
-isPlaying = false
-buttonPlay.onClick ->
-	if isPlaying
-		lottieLogoAnimation.pause()
-		isPlaying = false
-		buttonPlay.html = "PLAY"
-		buttonPlay.animate
+isTopPlaying = false
+buttonTop.onClick ->
+	if isTopPlaying
+		# 暂停动画
+		# pause the animation
+		lottieLogoTop.anim.pause()
+		# lottieLogoAnimation.pause()
+		isTopPlaying = false
+		buttonTop.html = "PLAY"
+		buttonTop.animate
 			opacity: 1
 	else
-		lottieLogoAnimation.play()
-		isPlaying = true
-		buttonPlay.html = "PAUSE"
-		buttonPlay.animate
+		# 播放动画
+		# play the animation
+		lottieLogoTop.anim.play()
+		# lottieLogoAnimation.play()
+		isTopPlaying = true
+		buttonTop.html = "PAUSE"
+		buttonTop.animate
 			opacity: 0.5
-		welcomeText.animate
-			opacity: 0
+
+# second #######################################
+
+lottieLogoBottom = new lf
+	jsonPath:'data.json'
+	autoplay: true
+	looping: true
+	y: Screen.height/2
+	width: Screen.width
+	height: Screen.height/2
+	borderColor: '#EEE'
+	borderWidth: 1
+
+buttonBottom = new Layer
+	y: 1018
+	x: 14
+	height: 100
+	width: 100
+	borderRadius: 50
+	backgroundColor: "#00D1C1"
+	html: "PAUSE"
+	shadowSpread: 15
+	shadowBlur: 50
+	shadowColor: "rgba(0,0,0,0.05)"
+	opacity: 0.5
+
+buttonBottom.style =
+	"color": "#FFF"
+	"text-align": "center"
+	"font-size": "22px"
+	"line-height": "100px"
+
+isBottomPlaying = true
+buttonBottom.onClick ->
+	if isBottomPlaying
+		lottieLogoBottom.anim.pause()
+		isBottomPlaying = false
+		buttonBottom.html = "PLAY"
+		buttonBottom.animate
+			opacity: 1
+	else
+		lottieLogoBottom.anim.play()
+		isBottomPlaying = true
+		buttonBottom.html = "PAUSE"
+		buttonBottom.animate
+			opacity: 0.5

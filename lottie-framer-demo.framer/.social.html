@@ -29,10 +29,10 @@
 
 		<script src="framer/coffee-script.js"></script>
 		<script src="framer/framer.js?nocache=de1b3b046cd7a44d11f275a7634f9e0b"></script>
-		<script src="framer/framer.generated.js?nocache=27d512ed46dba8aab8cfcccbfd23d274"></script>
-		<script src="framer/framer.modules.js?nocache=a48a3f6cb3e45983bd94201f7185633e"></script>
-		<script>document.addEventListener("DOMContentLoaded", function() {window.__framerClientCodeId = 14;window.__framerNew = function (n,loc,th,i){if (i == null) { return i };i.__framerInstanceInfo = _.defaults({name:n,location:loc,hash:th},i.__framerInstanceInfo);_.defaults(i.__framerInstanceInfo,{name:"Untitled"});return i;};window.__framerAnimation = function (th,a){if (a.isNoop === true) {return a;};var l = a.layer;if (l == null) { return a; };if (l.__framerAnimationInfo == null) {l.__framerAnimationInfo = {};};l.__framerAnimationInfo[th] = {originalState:a._originalState, destinationProperties: a.properties, destinationOptions: a.options};return a;};(function() {
-  var buttonPlay, isPlaying, lf, lottieLogoAnimation, welcomeText;
+		<script src="framer/framer.generated.js?nocache=954d2a1e4ffefbdb04374c0676c1214d"></script>
+		<script src="framer/framer.modules.js?nocache=b8e75acdced2dd73525048978432a2aa"></script>
+		<script>document.addEventListener("DOMContentLoaded", function() {window.__framerClientCodeId = 4;window.__framerNew = function (n,loc,th,i){if (i == null) { return i };i.__framerInstanceInfo = _.defaults({name:n,location:loc,hash:th},i.__framerInstanceInfo);_.defaults(i.__framerInstanceInfo,{name:"Untitled"});return i;};window.__framerAnimation = function (th,a){if (a.isNoop === true) {return a;};var l = a.layer;if (l == null) { return a; };if (l.__framerAnimationInfo == null) {l.__framerAnimationInfo = {};};l.__framerAnimationInfo[th] = {originalState:a._originalState, destinationProperties: a.properties, destinationOptions: a.options};return a;};(function() {
+  var buttonBottom, buttonTop, isBottomPlaying, isTopPlaying, lf, lottieLogoBottom, lottieLogoTop;
 
   Framer.Info = {
     title: "",
@@ -45,70 +45,104 @@
 
   lf = require('lottieLayer');
 
-  lottieLogoAnimation = window.__framerNew("lottieLogoAnimation", "15:26-21:0", "?",new lf({
+  lottieLogoTop = window.__framerNew("lottieLogoTop", "20:20-28:0", "?",new lf({
     jsonPath: 'data.json',
     autoplay: false,
     looping: true,
     width: Screen.width,
-    height: Screen.height
+    height: Screen.height / 2,
+    borderColor: '#EEE',
+    borderWidth: 1
   }));
 
-  welcomeText = window.__framerNew("welcomeText", "22:18-27:0", "#ddce88a5",new Layer({
-    y: 350,
-    width: Screen.width,
-    backgroundColor: 'transparent',
-    html: "<p>WELCOME</p><p>TO</p><p>LOTTIE</p>"
-  }));
-
-  welcomeText.style = {
-    "color": "#00D1C1",
-    "text-align": "center",
-    "font-size": "66px",
-    "line-height": "80px",
-    "font-family": "Avenir Light,Georgia,serif",
-    "font-style": "italic",
-    "letter-spacing": "5px"
-  };
-
-  buttonPlay = window.__framerNew("buttonPlay", "37:17-48:0", "#1796ac080",new Layer({
-    y: 981,
-    x: 150,
-    height: 93,
-    width: 340,
-    borderRadius: 6,
+  buttonTop = window.__framerNew("buttonTop", "29:16-40:0", "#b4da93bc",new Layer({
+    y: 447,
+    height: 100,
+    width: 100,
+    borderRadius: 50,
     backgroundColor: "#00D1C1",
     html: "PLAY",
     shadowSpread: 15,
     shadowBlur: 50,
-    shadowColor: "rgba(0,0,0,0.05)"
+    shadowColor: "rgba(0,0,0,0.05)",
+    x: 14
   }));
 
-  buttonPlay.style = {
+  buttonTop.style = {
     "color": "#FFF",
     "text-align": "center",
-    "font-size": "35px",
-    "line-height": "93px"
+    "font-size": "22px",
+    "line-height": "100px"
   };
 
-  isPlaying = false;
+  isTopPlaying = false;
 
-  buttonPlay.onClick(function() {
-    if (isPlaying) {
-      lottieLogoAnimation.pause();
-      isPlaying = false;
-      buttonPlay.html = "PLAY";
-      return window.__framerAnimation("#ae551338",buttonPlay.animate({
+  buttonTop.onClick(function() {
+    if (isTopPlaying) {
+      lottieLogoTop.anim.pause();
+      isTopPlaying = false;
+      buttonTop.html = "PLAY";
+      return window.__framerAnimation("#14ef30e9e",buttonTop.animate({
         opacity: 1
       }));
     } else {
-      lottieLogoAnimation.play();
-      isPlaying = true;
-      buttonPlay.html = "PAUSE";
-      window.__framerAnimation("#ebba76be",buttonPlay.animate({
+      lottieLogoTop.anim.play();
+      isTopPlaying = true;
+      buttonTop.html = "PAUSE";
+      return window.__framerAnimation("#81ee003c",buttonTop.animate({
         opacity: 0.5
       }));
-      return window.__framerAnimation("#15586ed40",welcomeText.animate({
-        opacity: 0
+    }
+  });
+
+  lottieLogoBottom = window.__framerNew("lottieLogoBottom", "70:23-79:0", "?",new lf({
+    jsonPath: 'data.json',
+    autoplay: true,
+    looping: true,
+    y: Screen.height / 2,
+    width: Screen.width,
+    height: Screen.height / 2,
+    borderColor: '#EEE',
+    borderWidth: 1
+  }));
+
+  buttonBottom = window.__framerNew("buttonBottom", "80:19-92:0", "#87b4e06e",new Layer({
+    y: 1018,
+    x: 14,
+    height: 100,
+    width: 100,
+    borderRadius: 50,
+    backgroundColor: "#00D1C1",
+    html: "PAUSE",
+    shadowSpread: 15,
+    shadowBlur: 50,
+    shadowColor: "rgba(0,0,0,0.05)",
+    opacity: 0.5
+  }));
+
+  buttonBottom.style = {
+    "color": "#FFF",
+    "text-align": "center",
+    "font-size": "22px",
+    "line-height": "100px"
+  };
+
+  isBottomPlaying = true;
+
+  buttonBottom.onClick(function() {
+    if (isBottomPlaying) {
+      lottieLogoBottom.anim.pause();
+      isBottomPlaying = false;
+      buttonBottom.html = "PLAY";
+      return window.__framerAnimation("#d4be459b",buttonBottom.animate({
+        opacity: 1
+      }));
+    } else {
+      lottieLogoBottom.anim.play();
+      isBottomPlaying = true;
+      buttonBottom.html = "PAUSE";
+      return window.__framerAnimation("#169068576",buttonBottom.animate({
+        opacity: 0.5
       }));
     }
   });

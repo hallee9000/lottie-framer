@@ -1,8 +1,12 @@
 # Framer lottie 模块
-【[Airbnb Lottie Web版](https://github.com/bodymovin/bodymovin)】
+【[bodymovin插件](https://github.com/bodymovin/bodymovin)】
 【[for English](#a-framer-module-to-use-lottie)】
 
-这个 Framer module 将 Airbnb 的 Lottie 结合进来，让你能够通过 Framer 加载 AE 导出的动画，并能对这个动画过程进行控制。
+想知道怎么在 AE 中使用 bodymovin 插件，请点[这里](http://www.cnblogs.com/zamhown/p/6688369.html)。
+
+bodymovin 插件是一款支持将 AE 动画导出为 json 数据，并在 web 中渲染播放的 AE 插件。前段时间 Airbnb 出了一个 Lottie 工具，和该插件结合起来，使得 iOS 和 Android 工程师可以很容易地在这两个平台中实现。
+
+为了方便大家能够在 Framer 中播放并控制 AE 制作的动画，我写了这个这个 Framer module ，将 bodymovin 结合进来，让你能够通过 Framer 加载 AE 导出的动画，并能对这个动画过程进行控制。
 
 ### 使用方法
 
@@ -33,8 +37,10 @@ lottieLogo = new lottieLayer
 
 ### 方法
 
+<h4 style="color:red;"><b>特别注意：</b>之前的版本有一个 bug ：生成两个 lottieLayer 之后，控制两个动画的过程只对第二个有效，现已修复。但现在调用这些方法时，不再是直接调用这个图层的方法，而是调用它的 anim 属性的方法。</h4>
+
 ```CoffeeScript
-lottieLogo.play()
+lottieLogo.anim.play()
 ```
 
 * **play()**  播放动画。
@@ -48,7 +54,7 @@ lottieLogo.play()
 * **destroy()**  销毁这个动画。
 
 ### 效果演示
-[DEMO链接](https://framer.cloud/ytocz/)
+[DEMO链接](https://framer.cloud/ytocz/2/)
 
 ![](demo.gif)
 
@@ -56,7 +62,11 @@ ____
 
 # a Framer module to use Lottie
 
-This module combines Framer and Lottie by Airbnb, which helps you play animations exported by AE and control its process.
+【[bodymovin plugin](https://github.com/bodymovin/bodymovin)】
+
+Bodymovin is a great AE plugin, which can export the animations' json data and help you render it in web. Recently Airbnb publishes Lottie, an iOS, Android, and React Native library, which renders After Effects animations in real time, allowing apps to use animations as easily as they use static images.
+
+To make bodymovin can be used in Framer, I wrote this module. It helps you play animations exported by AE and control its process.
 
 ### usage
 
@@ -83,6 +93,9 @@ lottieLogo = new lottieLayer
 * **autoplay** true / false it will start playing as soon as it is ready
 
 ### methods
+
+<h4 style="color:red;"><b>NOTE：</b>The previous version had a bug: if you use its methods, just the latest one works when creating 2 lottieLayers. Now it's fixed, but you should call it from lottieLayer's `anim` property.</h4>
+
 animation instances have these main methods:
 
 * **play()**  Play the animation.
@@ -98,11 +111,11 @@ animation instances have these main methods:
 Play the animation manually like this:
 
 ```CoffeeScript
-	lottieLogo.play()
+	lottieLogo.anim.play()
 ```
 
 ### DEMO TIME
-[DEMO link](https://framer.cloud/ytocz/)
+[DEMO link](https://framer.cloud/ytocz/2/)
 
 ![](demo.gif)
 
