@@ -1,4 +1,3 @@
-bm = null
 class lottieLayer extends Layer
 	# 构造器
 	constructor: (@options={}) ->
@@ -36,13 +35,12 @@ class lottieLayer extends Layer
 
 		if(document.bodymovinScript)
 			bodymovinTimer = Utils.interval 0.1,->
-				if(bm)
-					_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bm)
+				if(window.bodymovin)
+					_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin)
 					window.clearInterval(bodymovinTimer)
 		else
 			document.bodymovinScript = Utils.domLoadScript 'bodymovin.min.js', ->
-				bm = bodymovin
-				_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bm)
+				_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin)
 
 		_loadJSON = (jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin) ->
 			Utils.domLoadJSON jsonPath, (err, data)->
