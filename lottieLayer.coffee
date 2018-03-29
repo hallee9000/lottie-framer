@@ -12,8 +12,6 @@ class lottieLayer extends Layer
 
 		super @options
 
-		@anim = null
-
 		anmiLayer = new Layer
 			parent: @
 			width: @options.width
@@ -24,32 +22,45 @@ class lottieLayer extends Layer
 		anmiLayer._element.childNodes[0].style.height = '100%'
 		anmiLayer._element.childNodes[0].childNodes[0].style.height = '100%'
 
-		jsonPath = @options.jsonPath
-		renderer = @options.renderer
-		isLoop = @options.looping
-		isAutoplay = @options.autoplay
+		@elId = "lottie-animation-" + anmiLayer.id
+		@anim = null
 
-		elId = "lottie-animation-"+anmiLayer.id
+		@_insertScript()
+		@_initialize(@elId)
 
-		_this = @
+	@define 'jsonPath',
+		get: ->
+			@options.jsonPath
+		set: (value) ->
+			@options.jsonPath = value
+			if @elId
+				@_initialize(@elId)
 
-		if(document.bodymovinScript)
-			bodymovinTimer = Utils.interval 0.1,->
-				if(window.bodymovin)
-					_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin)
-					window.clearInterval(bodymovinTimer)
-		else
-			document.bodymovinScript = Utils.domLoadScript 'bodymovin.min.js', ->
-				_loadJSON(jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin)
+	_insertScript: () ->
+		localSrc = 'lottie.min.js'
+		onlineSrc = 'https://raw.githubusercontent.com/airbnb/lottie-web/master/build/player/lottie.min.js'
+		if !window.lottie
+			try
+				scriptText = Utils.domLoadDataSync localSrc
+			catch e
+				try
+					scriptText = Utils.domLoadDataSync onlineSrc
+				catch e
+					throw Error("Cant find lottie.min.js, please put it in project root folder.")
+			script = document.createElement "script"
+			script.type = "text/javascript"
+			script.innerHTML = scriptText
 
-		_loadJSON = (jsonPath,elId,renderer,isLoop,isAutoplay,bodymovin) ->
-			Utils.domLoadJSON jsonPath, (err, data)->
-				aniObj =
-					container: document.getElementById(elId)
-					renderer: renderer
-					loop: isLoop
-					autoplay:isAutoplay
-					animationData: data
-				_this.anim = bodymovin.loadAnimation(aniObj)
+			head = document.getElementsByTagName("head")[0]
+			head.appendChild script
+
+	_initialize: (elId) ->
+		aniObj =
+			container: document.getElementById(elId)
+			renderer: @options.renderer
+			loop: @options.looping
+			autoplay: @options.autoplay
+			path: @options.jsonPath
+		@anim = lottie.loadAnimation(aniObj)
 
 module.exports = lottieLayer

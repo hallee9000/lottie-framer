@@ -1,52 +1,26 @@
 app.coffee
+index.html
 bodymovin.min.js
+images/framer-icon.png
 data-2.json
-data.json
-framer/backups/backup-2017-04-30 10.12.46.coffee
-framer/backups/backup-2017-04-30 10.17.46.coffee
-framer/backups/backup-2017-04-30 10.34.46.coffee
-framer/backups/backup-2017-04-30 10.35.46.coffee
-framer/backups/backup-2017-04-30 10.37.46.coffee
-framer/backups/backup-2017-04-30 10.38.46.coffee
-framer/backups/backup-2017-04-30 10.39.46.coffee
-framer/backups/backup-2017-04-30 10.40.46.coffee
-framer/backups/backup-2017-04-30 10.41.46.coffee
-framer/backups/backup-2017-04-30 10.42.46.coffee
-framer/backups/backup-2017-04-30 10.43.46.coffee
-framer/backups/backup-2017-04-30 10.44.46.coffee
-framer/backups/backup-2017-04-30 10.45.58.coffee
-framer/backups/backup-2017-04-30 10.47.46.coffee
-framer/backups/backup-2017-04-30 10.49.46.coffee
-framer/backups/backup-2017-04-30 10.50.46.coffee
-framer/backups/backup-2017-04-30 10.51.46.coffee
-framer/backups/backup-2017-04-30 10.52.46.coffee
-framer/backups/backup-2017-04-30 10.53.46.coffee
-framer/backups/backup-2017-04-30 16.19.26.coffee
-framer/backups/backup-2017-04-30 17.52.34.coffee
-framer/coffee-script.js
-framer/config.json
-framer/framer.generated.js
-framer/framer.init.js
-framer/framer.js
-framer/framer.js.map
-framer/framer.modules.js
-framer/images/cursor-active.png
-framer/images/cursor-active@2x.png
+framer/preview.png
+framer/manifest.txt
 framer/images/cursor.png
-framer/images/cursor@2x.png
+framer/images/cursor-active@2x.png
 framer/images/icon-120.png
-framer/images/icon-152.png
-framer/images/icon-180.png
+framer/images/cursor@2x.png
 framer/images/icon-192.png
 framer/images/icon-76.png
-framer/manifest.txt
-framer/preview.png
-framer/social-1200x630.png
-framer/social-800x600.png
-framer/social-80x80.png
-framer/social-880x460.png
-framer/style.css
+framer/images/cursor-active.png
+framer/images/icon-152.png
+framer/images/icon-180.png
+framer/config.json
+framer/framer.modules.js
 framer/version
-images/framer-icon.png
-index.html
+framer/style.css
+framer/framer.generated.js
+framer/coffee-script.js
+framer/framer.init.js
+framer/framer.js
+data.json
 modules/lottieLayer.coffee

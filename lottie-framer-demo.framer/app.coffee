@@ -26,7 +26,7 @@ lottieLogoTop = new lf
 	height: Screen.height/2
 	borderColor: '#EEE'
 	borderWidth: 1
-
+lottieLogoTop.anim.play()
 buttonTop = new Layer
 	y: 447
 	height: 100
